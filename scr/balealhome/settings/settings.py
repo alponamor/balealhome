@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 PREREQ_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -41,9 +42,23 @@ PREREQ_APPS = [
 
 PROJECT_APPS = [
     'balealhome.cashflow',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    # ... include the providers you want to enable:
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.foursquare',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.instagram',
+    'allauth.socialaccount.providers.paypal',
+    'allauth.socialaccount.providers.twitter',
+    'allauth.socialaccount.providers.untappd',
+    'allauth.socialaccount.providers.vk',
 ]
 
 INSTALLED_APPS = PREREQ_APPS + PROJECT_APPS
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -90,6 +105,13 @@ DATABASES = {
     }
 }
 
+# Список источников аутентификации для проверки пользователя (для allauth)
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
