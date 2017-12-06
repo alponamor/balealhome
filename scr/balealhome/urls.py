@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from balealhome.cashflow import views
 
 urlpatterns = [
+    url(r'^$', views.hi_page, name = 'hi_page'),                 # это стартовая страница для неавторизованных юзеров
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('allauth.urls')),
+    url(r'^accounts/profile/$', views.account_profile, name = 'account_profile'), # стартовая страница администратора, пока по номеру(?), по именю м.б. потом
 ]

@@ -46,14 +46,14 @@ PROJECT_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     # ... include the providers you want to enable:
-    'allauth.socialaccount.providers.facebook',
-    'allauth.socialaccount.providers.foursquare',
-    'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.instagram',
-    'allauth.socialaccount.providers.paypal',
-    'allauth.socialaccount.providers.twitter',
-    'allauth.socialaccount.providers.untappd',
-    'allauth.socialaccount.providers.vk',
+#     'allauth.socialaccount.providers.facebook',
+#     'allauth.socialaccount.providers.foursquare',
+#     'allauth.socialaccount.providers.google',
+#     'allauth.socialaccount.providers.instagram',
+#     'allauth.socialaccount.providers.paypal',
+#     'allauth.socialaccount.providers.twitter',
+#     'allauth.socialaccount.providers.untappd',
+#     'allauth.socialaccount.providers.vk',
 ]
 
 INSTALLED_APPS = PREREQ_APPS + PROJECT_APPS

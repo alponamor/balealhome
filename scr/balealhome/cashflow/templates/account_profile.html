@@ -1,0 +1,40 @@
+{% extends 'cashflow/base-cashflow.html' %}
+
+{% block user_menu1 %}
+  <li><a class="text-header">{{am}}</a> <!--логин зашедшего (НЕ ВСЕГДА РАБОТАЕТ!)-->
+    <ul>
+      <li><a class="text-header" href="#">Sub Menu 1фвыаф</a></li>
+      <li><a class="text-header" href="#">Sub Menu 2пыапыппы</a></li>
+      <li><a class="text-header" href="../../accounts/logout">Log Out</a></li>
+    </ul>
+  </li>
+{% endblock user_menu1 %}
+
+{% block site_menu %}
+<li><a class="menu-sel">Accomodations</a></li>
+<li><a class="menu-text" href="#">Что-н. еще</a></li>
+{% endblock site_menu %}
+
+{% block content %}
+
+<p> Имя администратора: {{am}} (просто поверка)</p>
+<p> Здесь будет список домов администратора в виде картинок с подписями</p>
+
+{% for accomodation in accomodations %}
+    <div>
+      <hr>
+      <h3><a href="#">{{ accomodation.name }}</a></h3>
+      <br>
+      <q>{{ accomodation.descript }}</q>
+      <p>owner: {{ accomodation.owner }} administrator: {{ accomodation.admin }} </p>
+
+        <!--<h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>-->
+    </div>
+{% endfor %}
+  <hr>
+
+<p><a class="text-header" href="/accomodation/new/">Add accomodation</a></p>
+
+
+{% endblock content%}

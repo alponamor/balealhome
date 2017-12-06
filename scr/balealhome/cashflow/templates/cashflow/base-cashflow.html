@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <title>balealhome</title>
+        <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet"> <!--бренд-->
+        <link href="https://fonts.googleapis.com/css?family=Cuprum" rel="stylesheet"> <!--меню-->
+        <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet"> <!--страницы-->
+        <link rel="stylesheet" href="{% static 'balealhome.css' %}">
+        <link rel="icon" href="{% static '/images/icn.png' %}">
+<!--        <meta http-equiv="refresh" content="10"> автоматической перезагрузки страницы через ...sec-->
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+      <div class="page">
+
+<!--Заголовок страницы-->
+        <div class="page-header">
+          <ul class="li-header">
+            <li><a href="/"><img class="logo_img" src="{% static 'images/logo.png' %}" alt="balealhome.com"></a></li>
+            <li><a class="brand_name" href="/">balealhome</a></li>
+            <nav style="float:right" id="primary_nav_wrap"> <!--пользовательское выпадающее меню (должно появляться после авторизации)-->
+              <ul>
+              {% block user_menu1 %}
+                {% if user.is_authenticated %}
+                  <li><a class="text-header">{{user.email}}</a> <!--логин зашедшего (НЕ РАБОТАЕТ!)-->
+                    <ul>
+                      <li><a class="text-header" href="#">Sub Menu 1фвыаф</a></li>
+                      <li><a class="text-header" href="#">Sub Menu 2пыапыппы</a></li>
+                      <li><a class="text-header" href="../../accounts/logout">Log Out</a></li>
+                    </ul>
+                  </li>
+                {% else %}
+                  <!-- <a class="text-header" href="../../accounts/login">Log In</a> cсылка наформу для логина (нужно сделать)-->
+                  <a class="text-header" href="{% url 'account_login' %}">Log In</a> <!--cсылка наформу для логина (нужно сделать)-->
+              {% endif %}
+              {% endblock user_menu1 %}
+            </ul>
+            </nav>
+            <!--<li style="float:right"><a class="text-header">|</a></li>-->
+            <li style="float:right"><a class="text-header" href="/">ru</a></li>
+            <li style="float:right"><a class="text-header" href="/">pt</a></li>
+            <li style="float:right"><a class="text-sel" href="/">en</a></li>
+          </ul>
+          <nav> <!-- горизонтальное меню сайта, меняющееся в страницах -->
+            <ul class="li-header">
+            {% block site_menu %}
+              <li><a href="/">1</a></li>
+              <li><a href="/">2</a></li>
+              <li><a href="/">3</a></li>
+            {% endblock site_menu %}
+            </ul>
+          </nav>
+        </div>
+        <hr align='top' color=#F0F0F0 size=2px width=100%> <!--разделитель шапки и содержания-->
+
+<!--Содержимое страницы-->
+        <div class="page-content">
+          <p>base-cashflow_content</p>
+          {% block content %}
+          {% endblock content %} <!--для контента страниц-->
+        </div>
+
+<!--Подвал страницы-->
+        <div class="page-footer">
+          <hr align='center' color=#ffffff size=2px width=100%>
+          {% block footer %} <!--чтоб можно было персонализировать подвал на страницах-->
+            <p class="text-footer">footer</p>
+            <p class="text-footer">Здесь будет обычное содержание подвала.</p>
+            <p class="text-footer">Спасибо, что посетили мой сайт.</p>
+          {% endblock footer %}
+        </div>
+      </div>
+    </body>
+</html>
