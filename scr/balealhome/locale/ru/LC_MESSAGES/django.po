@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-12-06 19:14+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\cashflow\templates\cashflow\account_profile.html:7
+msgid "Submenu 1"
+msgstr "Подменю 1"
+
+#: .\cashflow\templates\cashflow\account_profile.html:8
+msgid "Submenu 2"
+msgstr "Подменю 2"
+
+#: .\cashflow\templates\cashflow\account_profile.html:9
+#: .\cashflow\templates\cashflow\base-cashflow.html:34
+msgid "Log Out"
+msgstr "Выйти"
+
+#: .\cashflow\templates\cashflow\account_profile.html:15
+msgid "Accomodations"
+msgstr "Объекты"
+
+#: .\cashflow\templates\cashflow\account_profile.html:16
+#: .\cashflow\templates\cashflow\index.html:7
+#: .\cashflow\templates\cashflow\index.html:8
+msgid "Anything else"
+msgstr "Что-нибудь еще"
+
+#: .\cashflow\templates\cashflow\account_profile.html:20
+#, python-format
+msgid "Administrator name: %(am)s"
+msgstr "Administrator name: %(am)s"
+
+#: .\cashflow\templates\cashflow\account_profile.html:21
+msgid ""
+"Here there will be a list of administrator's accomodations in the form of "
+"pictures with signatures"
+msgstr "Здесь будет список домов администратора в виде картинок с подписями"
+
+#: .\cashflow\templates\cashflow\account_profile.html:37
+msgid "Add new accomodation"
+msgstr "Добавить объект"
+
+#: .\cashflow\templates\cashflow\base-cashflow.html:38
+msgid "Log In"
+msgstr "Войти"
+
+#: .\cashflow\templates\cashflow\base-cashflow.html:70
+msgid "About us"
+msgstr "О нас"
+
+#: .\cashflow\templates\cashflow\base-cashflow.html:71
+msgid "There will be the usual contents of the footer."
+msgstr "Здесь будет обычное содержание подвала."
+
+#: .\cashflow\templates\cashflow\index.html:5
+msgid "Accomodation management"
+msgstr "Управление домом"
+
+#: .\cashflow\templates\cashflow\index.html:6
+msgid "Renting help"
+msgstr "Помощь в аренде"

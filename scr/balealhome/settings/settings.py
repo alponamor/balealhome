@@ -63,12 +63,21 @@ SITE_ID = 1
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware', # Для интернационализации
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
+
+
+
+
+
+
 
 ROOT_URLCONF = 'balealhome.urls'
 
@@ -87,6 +96,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'balealhome.wsgi.application'
 
@@ -113,6 +123,39 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 
+# EMAIL_BACKEND so allauth can proceed to send confirmation emails
+# ONLY for development/testing use console
+EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
+#пока SMTP что-то не работает
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# Custom allauth settings
+# Use email as the primary identifier
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+# Make email verification mandatory to avoid junk email accounts
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+# Eliminate need to provide username, as it's a very old practice
+ACCOUNT_USERNAME_REQUIRED = False
+#ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = False #временно, для настройки
+#LOGIN_REDIRECT_URL = 'accounts/profile'
+
+# для активации нового логина для django-registration, а может и не только
+#ACCOUNT_ACTIVATION_DAYS = 2 # кол-во дней для хранения кода активации
+# для отправки кода активации  для django-registration, а может и не только
+#AUTH_USER_EMAIL_UNIQUE = True
+#пока SMTP что-то не работает
+#MAIL_HOST = 'spl26.hosting.reg'            #EMAIL_HOST = 'smtp.gmail.com'
+#EMAIL_PORT = 465                   #EMAIL_PORT = 465
+#EMAIL_HOST_USER = 'info@balealhome.com'                #EMAIL_HOST_USER = 'my_mail@gmail.com'
+#SMTP host password: AnoTravessaNcasa!
+#EMAIL_HOST_PASSWORD = '2011Travessa5'           #EMAIL_HOST_PASSWORD = 'password'
+#EMAIL_USE_TLS = False               #EMAIL_USE_TLS = False
+#EMAIL_USE_SSL = True
+#DEFAULT_FROM_EMAIL = 'info@balealhome.com'#DEFAULT_FROM_EMAIL = 'my_mail@gmail.com'
+
+#SMTP host password: AnoTravessaNcasa!
+
+
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
@@ -136,6 +179,16 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+LANGUAGES = (
+	('ru', 'Russian'),
+	('en', 'English'),
+    ('pt', 'Portuguese'),
+#    ('fr', ('French')),
+)
+# Кортеж путей к папкам, в которых будут храниться файлы локализации
+LOCALE_PATHS = (
+	os.path.join(BASE_DIR, 'locale'),
+)
 
 TIME_ZONE = 'Europe/Moscow'
 

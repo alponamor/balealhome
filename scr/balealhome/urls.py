@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^accounts/profile/$', views.account_profile, name = 'account_profile'), # стартовая страница администратора, пока по номеру(?), по именю м.б. потом
+    url(r'^i18n/', include('django.conf.urls.i18n')), # для смены языка - НЕ РАБОТАЕТ!
 ]

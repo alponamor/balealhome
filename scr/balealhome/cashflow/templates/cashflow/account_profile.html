@@ -1,24 +1,24 @@
 {% extends 'cashflow/base-cashflow.html' %}
+{% load i18n %}
 
 {% block user_menu1 %}
   <li><a class="text-header">{{am}}</a> <!--логин зашедшего (НЕ ВСЕГДА РАБОТАЕТ!)-->
     <ul>
-      <li><a class="text-header" href="#">Sub Menu 1фвыаф</a></li>
-      <li><a class="text-header" href="#">Sub Menu 2пыапыппы</a></li>
-      <li><a class="text-header" href="../../accounts/logout">Log Out</a></li>
+      <li><a class="text-header" href="#">{% trans "Submenu 1" %}</a></li>
+      <li><a class="text-header" href="#">{% trans "Submenu 2" %}</a></li>
+      <li><a class="text-header" href="../../accounts/logout">{% trans "Log Out" %}</a></li>
     </ul>
   </li>
 {% endblock user_menu1 %}
 
 {% block site_menu %}
-<li><a class="menu-sel">Accomodations</a></li>
-<li><a class="menu-text" href="#">Что-н. еще</a></li>
+<li><a class="menu-sel">{% trans "Accomodations" %}</a></li>
+<li><a class="menu-text" href="#">{% trans "Anything else" %}</a></li>
 {% endblock site_menu %}
 
 {% block content %}
-
-<p> Имя администратора: {{am}} (просто поверка)</p>
-<p> Здесь будет список домов администратора в виде картинок с подписями</p>
+<p> {% blocktrans %}Administrator name: {{am}}{% endblocktrans %}</p>
+<p> {% trans "Here there will be a list of administrator's accomodations in the form of pictures with signatures" %}</p>
 
 {% for accomodation in accomodations %}
     <div>
@@ -34,7 +34,5 @@
 {% endfor %}
   <hr>
 
-<p><a class="text-header" href="/accomodation/new/">Add accomodation</a></p>
-
-
+<p><a class="text-header" href="/accomodation/new/">{% trans "Add new accomodation" %}</a></p>
 {% endblock content%}

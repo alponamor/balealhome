@@ -1,0 +1,77 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-12-06 19:34+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\cashflow\templates\cashflow\account_profile.html:7
+msgid "Submenu 1"
+msgstr "Submenu 1"
+
+#: .\cashflow\templates\cashflow\account_profile.html:8
+msgid "Submenu 2"
+msgstr "Submenu 2"
+
+#: .\cashflow\templates\cashflow\account_profile.html:9
+#: .\cashflow\templates\cashflow\base-cashflow.html:34
+msgid "Log Out"
+msgstr "Sair"
+
+#: .\cashflow\templates\cashflow\account_profile.html:15
+msgid "Accomodations"
+msgstr "Alojamentos"
+
+#: .\cashflow\templates\cashflow\account_profile.html:16
+#: .\cashflow\templates\cashflow\index.html:7
+#: .\cashflow\templates\cashflow\index.html:8
+msgid "Anything else"
+msgstr "Algo mais"
+
+#: .\cashflow\templates\cashflow\account_profile.html:20
+#, python-format
+msgid "Administrator name: %(am)s"
+msgstr "Nome do administrador: %(am)s"
+
+#: .\cashflow\templates\cashflow\account_profile.html:21
+msgid ""
+"Here there will be a list of administrator's accomodations in the form of "
+"pictures with signatures"
+msgstr "Aqui haverá uma lista de alojamentosdo administrador na forma de imagens com assinaturas"
+
+#: .\cashflow\templates\cashflow\account_profile.html:37
+msgid "Add new accomodation"
+msgstr "Adicionar alojamento"
+
+#: .\cashflow\templates\cashflow\base-cashflow.html:38
+msgid "Log In"
+msgstr "Iniciar sessão"
+
+#: .\cashflow\templates\cashflow\base-cashflow.html:70
+msgid "About us"
+msgstr "Sobre nós"
+
+#: .\cashflow\templates\cashflow\base-cashflow.html:71
+msgid "There will be the usual contents of the footer."
+msgstr "Haverá o conteúdo habitual do porão."
+
+#: .\cashflow\templates\cashflow\index.html:5
+msgid "Accomodation management"
+msgstr "Gestão de alojamento"
+
+#: .\cashflow\templates\cashflow\index.html:6
+msgid "Renting help"
+msgstr "Ajuda no aluguel"
