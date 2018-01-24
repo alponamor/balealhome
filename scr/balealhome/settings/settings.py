@@ -179,12 +179,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-LANGUAGES = (
+LANGUAGES = [
 	('ru', 'Russian'),
 	('en', 'English'),
     ('pt', 'Portuguese'),
-#    ('fr', ('French')),
-)
+#    ('fr', 'French'),
+]
 # Кортеж путей к папкам, в которых будут храниться файлы локализации
 LOCALE_PATHS = (
 	os.path.join(BASE_DIR, 'locale'),
